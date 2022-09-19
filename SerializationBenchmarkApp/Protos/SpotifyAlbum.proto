@@ -1,0 +1,77 @@
+﻿syntax = "proto3";
+
+package SerializationBenchmarkApp.Models;
+
+message ArtistProto {
+	ExternalUrlsProto ExternalUrls = 1;
+	string Href = 2;
+	string Id = 3;
+	string Name = 4;
+	string Type = 5;
+	string Uri = 6;
+}
+
+message CopyrightProto {
+	string Text = 1;
+	string Type = 2;
+}
+
+message ExternalIdsProto {
+	string Upc = 1;
+}
+
+message ExternalUrlsProto {
+	string Spotify = 1;
+}
+
+message ImageProto {
+	int64 Height = 1;
+	string Url = 2;
+	int64 Width = 3;
+}
+
+message ItemProto {
+	repeated ArtistProto Artists = 1;
+	repeated string AvailableMarkets = 2;
+	int64 DiscNumber = 3;
+	int64 DurationMs = 4;
+	bool Explicit = 5;
+	ExternalUrlsProto ExternalUrls = 6;
+	string Href = 7;
+	string Id = 8;
+	string Name = 9;
+	string PreviewUrl = 10;
+	int64 TrackNumber = 11;
+	string Type = 12;
+	string Uri = 13;
+}
+
+message SpotifyAlbumProto {
+	string AlbumType = 1;
+	repeated ArtistProto Artists = 2;
+	repeated string AvailableMarkets = 3;
+	repeated CopyrightProto Copyrights = 4;
+	ExternalIdsProto ExternalIds = 5;
+	ExternalUrlsProto ExternalUrls = 6;
+	repeated string Genres = 7;
+	string Href = 8;
+	string Id = 9;
+	repeated ImageProto Images = 10;
+	string Name = 11;
+	int64 Popularity = 12;
+	string ReleaseDate = 13;
+	string ReleaseDatePrecision = 14;
+	TracksProto Tracks = 15;
+	string Type = 16;
+	string Uri = 17;
+}
+
+message TracksProto {
+	string Href = 1;
+	repeated ItemProto Items = 2;
+	int64 Limit = 3;
+	string Next = 4;
+	int64 Offset = 5;
+	string Previous = 6;
+	int64 Total = 7;
+}
